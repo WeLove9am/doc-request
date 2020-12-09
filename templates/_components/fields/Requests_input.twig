@@ -1,0 +1,6 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+
+{% import "_includes/forms" as forms %}
+
+<hr />
+{{ craft.docRequest.getRequests(element.id) |raw }}

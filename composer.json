@@ -1,0 +1,41 @@
+{
+    "name": "welove9am/doc-request",
+    "description": "Document Request Logic",
+    "type": "craft-plugin",
+    "version": "1.0.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "docrequest"
+    ],
+    "support": {
+        "docs": "https://github.com/welove9am/doc-request/blob/master/README.md",
+        "issues": "https://github.com/welove9am/doc-request/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andy Parsons",
+            "homepage": "https://welove9am.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "welove9am\\docrequest\\": ""
+        }
+    },
+    "extra": {
+        "name": "DocRequest",
+        "handle": "doc-request",
+        "developer": "Andy Parsons",
+        "developerUrl": "https://welove9am.com",
+        "documentationUrl": "https://github.com/welove9am/doc-request/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/welove9am/doc-request/master/CHANGELOG.md",
+        "class": "welove9am\\docrequest\\DocRequest"
+    }
+}

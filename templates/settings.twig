@@ -1,0 +1,73 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * docRequest plugin for Craft CMS 3.x
+ *
+ * docRequest Settings.twig
+ *
+ * @author    Andy Parsons
+ * @copyright Copyright (c) 2020 Andy Parsons
+ * @link      https://welove9am.com
+ * @package   DocRequest
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("welove9am\\docrequest\\assetbundles\\docrequest\\DocRequestAsset") %}
+
+{{ forms.textField({
+    label: "Password for Document Requests"|t,
+    instructions: "Enter the password to be sent out to clients for downloading the Whitepaper"|t,
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: settings['someAttribute']})
+}}
+
+
+{{ forms.elementSelectField({
+    label: "PDF Link"|t,
+    instructions: "Enter the link to the Whitepaper"|t,
+    id: 'whitepaperLink',
+    name: 'whitepaperLink',
+    elementType: "craft\\elements\\Asset",
+    limit: 1,
+    sources: '*',
+    showSiteMenu: false,
+    elements: settings.whitepaperLink|length ? craft.assets.id(settings.whitepaperLink) : null,
+    criteria: {
+        kind: ['pdf'],
+        folderId: '62'
+    },
+    modalSettings: {
+        hideSidebar: 0,
+    }
+}) }}
+
+        {% set cols = {
+            name: {
+                heading: 'Section Name',
+                thin: true,
+                type: 'singleline'
+            },
+            link: {
+                heading: 'PDF Link',
+                thin: true,
+                type: 'singleline'
+            },
+            password: {
+                heading: 'Password',
+                type: 'singleline'
+            }
+
+        }
+        %}
+            {{
+            forms.editableTable({
+                id: 'buildHooks',
+                name: 'buildHooks',
+                addRowLabel: 'Add a section',
+                cols: cols,
+                rows: settings['buildHooks']
+            })}}
