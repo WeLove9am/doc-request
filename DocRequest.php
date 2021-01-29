@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2020 Andy Parsons
  */
 
-namespace welove9am\docrequest;
+namespace modules\docrequest;
 
 use Craft;
 use craft\base\Plugin;
@@ -19,9 +19,9 @@ use craft\services\Fields;
 use craft\services\Plugins;
 use craft\web\twig\variables\CraftVariable;
 use craft\web\UrlManager;
-use welove9am\docrequest\fields\Requests as RequestsField;
+use modules\docrequest\fields\Requests as RequestsField;
 
-use welove9am\docrequest\variables\DocRequestVariable;
+use modules\docrequest\variables\DocRequestVariable;
 use yii\base\Event;
 
 /**
